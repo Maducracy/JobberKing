@@ -255,7 +255,7 @@ function Navbar() {
           {/* Mobile Dropdown */}
           <div className="flex flex-col">
             <button
-              className="text-left w-full text-gray-700 font-medium"
+              className="text-left w-full text-gray-700 font-medium "
               onClick={() => setShowJobSeekerMobile(!showJobSeekerMobile)}
             >
               Job Seeker {showJobSeekerMobile ? "▲" : "▼"}
