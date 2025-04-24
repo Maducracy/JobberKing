@@ -140,6 +140,7 @@ import { Link, useNavigate } from "react-router-dom";
 import briefcase from "../assets/briefcase.png";
 import menu from "../assets/menu.png";
 
+
 function Navbar() {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);

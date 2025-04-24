@@ -6,6 +6,7 @@ import { useApistore } from "./Zustand";
 import Application from "./Component/Application";
 import Findjob from "./Component/Findjob";
 
+
 function Home() {
   const { output, fetchData } = useApistore();
 
