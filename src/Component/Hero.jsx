@@ -15,7 +15,7 @@ function Hero() {
     <div className="relative w-full min-h-[45vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 overflow-hidden flex flex-col items-center justify-center">
       {/* Content */}
       <div className="relative z-10 text-center animate-fade-in-up px-4 mb-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 mt-14">
           Explore <span className="text-indigo-600">Your Next Opportunity</span>
         </h2>
 
@@ -36,7 +36,7 @@ function Hero() {
       <img
         src={Man}
         alt="Man at work"
-        className="w-40 md:w-56 animate-bounce-slow z-10"
+        className="w-40 md:w-100 animate-bounce-slow z-10"
       />
 
       {/* Wavy Border Bottom */}
