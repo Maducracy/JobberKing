@@ -158,7 +158,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-md p-4 sticktop-0 z-40y ">
+      <nav className="bg-white shadow-md p-4 sticky top-0 z-40">
         {/* Top Nav */}
         <div className="flex justify-between items-center">
           {/* Logo */}

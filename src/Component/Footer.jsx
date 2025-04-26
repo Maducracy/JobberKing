@@ -1,7 +1,8 @@
 import React from "react";
 
-import { FaTwitter, FaFacebookF } from "react-icons/fa";
+import {  FaFacebookF } from "react-icons/fa";
 import { AiFillLinkedin } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import getit2 from "../assets/getit2.png";
 
@@ -78,21 +79,23 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="flex justify-center gap-10 items-center  ">
-      <a   href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <FaTwitter className="text-xl hover:text-blue-400 transition" />
-      </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-        <AiFillLinkedin className="text-xl hover:text-blue-600 transition" />
-      </a>
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-        <FiGithub className="text-xl hover:text-gray-300 transition" />
-      </a>
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-        <FaFacebookF className="text-xl hover:text-blue-500 transition" />
-      </a>
-      <img className="flex-col w-25 h-25 " src={getit2} alt="" />
-    </div>
+      <div className="flex justify-center gap-6 items-center">
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="rounded-full p-2 border border-black hover:text-blue-400 transition">
+    <FaXTwitter className="text-lg" />
+  </a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="rounded-full p-2 border border-black hover:text-black-600 transition">
+    <AiFillLinkedin className="text-lg" />
+  </a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="rounded-full p-2 border border-black hover:text--300 transition">
+    <FiGithub className="text-lg" />
+  </a>
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="rounded-full p-2 border border-black hover:text-black-500 transition">
+    <FaFacebookF className="text-lg" />
+  </a>
+  <img className="w-30 h- " src={getit2} alt="" />
+</div>
+
+
       <div className="border-gray-300 text-center py-4 text-4x1">
         &copy; 2025 WorkNaija
       </div>
