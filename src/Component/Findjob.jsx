@@ -117,7 +117,7 @@ const JobList = () => {
 
                   
                     {dropdownOpen && dropdownJob?.id === job.id && (
-                      <motion.div
+                      <div
                         className="absolute top-6 right-0 bg-white shadow-md p-4 rounded w-40 z-10"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const JobList = () => {
                             Report Job
                           </li>
                         </ul>
-                      </motion.div>
+                      </div>
                     )}
                 
                 </div>
