@@ -158,7 +158,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-md p-4 sticky top-0 z-40">
+      <nav className="bg-white shadow-md p-4 sticktop-0 z-40y ">
         {/* Top Nav */}
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -254,7 +254,7 @@ function Navbar() {
 
       {/* Slide-in Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           show ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
@@ -269,7 +269,7 @@ function Navbar() {
           <Link to="/Careers" onClick={() => setShow(false)}>Careers</Link>
 
           {/* Mobile Dropdown */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full h-full">
             <button
               className="text-left w-full text-gray-700 font-medium"
               onClick={() => setShowJobSeekerMobile(!showJobSeekerMobile)}
