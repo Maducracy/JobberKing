@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useApistore } from "../Zustand";
 import { Typewriter } from "react-simple-typewriter";
@@ -79,23 +80,15 @@ function Hero() {
       {/* Features Section */}
       <div className="bg-[#0d1624] text-white py-8 px-4 flex flex-wrap justify-center gap-10">
         <div className="flex flex-col items-center">
-          <div className="w-12 h-12 bg-white text-[#0d1624] rounded-full flex items-center justify-center text-2xl mb-2">
-            👀
-          </div>
-          <p className="text-center">Get seen by employers</p>
+         
         </div>
-        <div className="flex flex-col items-center">
-          <div className="w-12 h-12 bg-white text-[#0d1624] rounded-full flex items-center justify-center text-2xl mb-2">
-            🧠
-          </div>
-          <p className="text-center">Access the best jobs for you</p>
-        </div>
+       
       </div>
 
       {/* CV Upgrade Section */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gray-100 py-12 px-6">
         {/* CV Image */}
-        <div className="flex-1 flex justify-center mb-6 md:mb-0">
+        <div className="flex-1 flex justify-centre gap-5  mb-6 md:mb-0">
           <img src={cv} alt="CV Upgrade" className="w-60 h-60 object-cover rounded-lg" />
         </div>
 
