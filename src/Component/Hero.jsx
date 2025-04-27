@@ -1,35 +1,39 @@
-
 import React from "react";
-import { useApistore } from "../Zustand";
+import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import Man from "../assets/Man.png";
 import laptop from "../assets/laptop.jpeg";
 import cv from "../assets/cv.jpeg";
-import { useNavigate } from "react-router-dom";
+import { useApistore } from "../Zustand";
 
 function Hero() {
   const { output, fetchData } = useApistore();
-  const navigate =useNavigate();
-  const handleupgradecv = () => {
-navigate("/upgradecv")
-  }
+  const navigate = useNavigate();
+
+  const handleUpgradeCV = () => {
+    navigate("/upgradecv");
+  };
 
   const handleFetchJobs = () => {
     fetchData();
   };
 
+  const handleExplorePartnerships = () => {
+    navigate("/partnerships");
+  };
+
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Top Section */}
-      <div className="relative w-full min-h-[50vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative w-full min-h-[60vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 flex flex-col items-center justify-center px-6 text-center">
         {/* Typewriter Content */}
         <div className="z-10 animate-fade-in-up mt-14">
-          <h2 className="text-xl md:text-6xl font-bold text-gray-800 mb-3">
-            Explore <span className="text-indigo-600">Your Next Opportunity</span>
+          <h2 className="text-2xl md:text-5xl font-semibold text-gray-800 mb-3">
+            Unlock <span className="text-indigo-600">Your Next Opportunity</span>
           </h2>
-          <h1 className="text-md md:text-2xl text-gray-700">
+          <h1 className="text-md md:text-2xl text-gray-700 mb-6">
             <Typewriter
-              words={['Your journey to', 'finding the perfect.', 'job starts here!']}
+              words={['Your journey to', 'finding the perfect job', 'starts right here!']}
               loop
               cursor
               cursorStyle="|"
@@ -38,6 +42,14 @@ navigate("/upgradecv")
               delaySpeed={1000}
             />
           </h1>
+          <div className="flex gap-6 justify-center mt-8">
+            <button onClick={handleFetchJobs} className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-md transition-all duration-300">
+              Find Jobs
+            </button>
+            <button onClick={handleUpgradeCV} className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-3 px-8 rounded-md transition-all duration-300">
+              Upgrade Your CV
+            </button>
+          </div>
         </div>
 
         {/* Animated Man Image */}
@@ -56,21 +68,19 @@ navigate("/upgradecv")
       </div>
 
       {/* Career Advancement Section */}
-      <div className="bg-[#0d1624] text-white py-12 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="bg-[#0d1624] text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex-1">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Advance your career
+          <h1 className="text-3xl md:text-4xl font-semibold mb-4">
+            Advance Your Career
           </h1>
           <p className="text-lg mb-6">
-            Create a free account, complete your profile,
-            <br className="hidden md:block" />
-            and get matched with your dream job.
+            Create a free account, complete your profile, and get matched with your dream job in no time.
           </p>
-          <div className="flex gap-4 flex-wrap justify-center md:justify-start">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded">
+          <div className="flex gap-6 flex-wrap justify-center md:justify-start">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-all duration-300">
               Get Started
             </button>
-            <button className="border border-white hover:bg-white hover:text-[#0d1624] px-6 py-3 rounded">
+            <button className="border border-white hover:bg-white hover:text-[#0d1624] px-6 py-3 rounded-md transition-all duration-300">
               Learn More
             </button>
           </div>
@@ -82,32 +92,54 @@ navigate("/upgradecv")
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="bg-[#0d1624] text-white py-8 px-4 flex flex-wrap justify-center gap-10">
-        <div className="flex flex-col items-center">
-         
-        </div>
-       
-      </div>
-
       {/* CV Upgrade Section */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gray-100 py-12 px-6">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gray-100 py-16 px-6">
         {/* CV Image */}
-        <div className="flex-1 flex justify-centre gap-5  mb-6 md:mb-0">
+        <div className="flex-1 flex justify-center gap-5 mb-6 md:mb-0">
           <img src={cv} alt="CV Upgrade" className="w-60 h-60 object-cover rounded-lg" />
         </div>
 
         {/* CV Text and Button */}
         <div className="max-w-md text-center md:text-left">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to level up your CV game?
+          <h2 className="text-3xl font-semibold mb-4">
+            Ready to Level Up Your CV?
           </h2>
           <p className="text-gray-700 mb-6">
-            Collaborate with a professional CV writer to highlight your skills and achievements like never before.
+            Collaborate with a professional CV writer to showcase your skills and achievements in the best light.
           </p>
-          <button onClick={handleupgradecv} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded">
+          <button onClick={handleUpgradeCV} className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-md transition-all duration-300">
             Upgrade My CV
           </button>
+        </div>
+      </div>
+
+      {/* Partnership Section */}
+      <div className="bg-[#f3f4f6] py-16 px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          {/* Text Section */}
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+              Empowering Careers Through Partnerships
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              We are committed to fostering collaboration between private companies, government agencies, and job seekers to create more opportunities.
+            </p>
+            <div className="flex gap-6 flex-wrap justify-center md:justify-start">
+              <button onClick={handleExplorePartnerships} className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-md transition-all duration-300">
+                Explore Partnerships
+              </button>
+            </div>
+          </div>
+
+          {/* Text Section for Additional Information */}
+          <div className="flex-1 text-center md:text-left mt-6 md:mt-0">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Join Us in Building a Better Job Market
+            </h3>
+            <p className="text-md text-gray-700 mb-6">
+              By working together, we can shape a job market that provides inclusive and diverse opportunities to every individual. Whether you're a startup or an established organization, we can help you connect with talent.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -133,3 +165,4 @@ navigate("/upgradecv")
 }
 
 export default Hero;
+
