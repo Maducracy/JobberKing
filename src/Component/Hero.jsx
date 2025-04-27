@@ -42,14 +42,7 @@ function Hero() {
               delaySpeed={1000}
             />
           </h1>
-          <div className="flex gap-6 justify-center mt-8">
-            <button onClick={handleFetchJobs} className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-md transition-all duration-300">
-              Find Jobs
-            </button>
-            <button onClick={handleUpgradeCV} className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-3 px-8 rounded-md transition-all duration-300">
-              Upgrade Your CV
-            </button>
-          </div>
+        
         </div>
 
         {/* Animated Man Image */}
