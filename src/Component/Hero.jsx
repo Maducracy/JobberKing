@@ -5,9 +5,14 @@ import { Typewriter } from "react-simple-typewriter";
 import Man from "../assets/Man.png";
 import laptop from "../assets/laptop.jpeg";
 import cv from "../assets/cv.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
   const { output, fetchData } = useApistore();
+  const navigate =useNavigate();
+  const handleupgradecv = () => {
+navigate("/upgradecv")
+  }
 
   const handleFetchJobs = () => {
     fetchData();
@@ -19,7 +24,7 @@ function Hero() {
       <div className="relative w-full min-h-[50vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 flex flex-col items-center justify-center px-4 text-center">
         {/* Typewriter Content */}
         <div className="z-10 animate-fade-in-up mt-14">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3">
+          <h2 className="text-xl md:text-6xl font-bold text-gray-800 mb-3">
             Explore <span className="text-indigo-600">Your Next Opportunity</span>
           </h2>
           <h1 className="text-md md:text-2xl text-gray-700">
@@ -100,7 +105,7 @@ function Hero() {
           <p className="text-gray-700 mb-6">
             Collaborate with a professional CV writer to highlight your skills and achievements like never before.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded">
+          <button onClick={handleupgradecv} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded">
             Upgrade My CV
           </button>
         </div>
