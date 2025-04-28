@@ -5,6 +5,7 @@ import Man from "../assets/Man.png";
 import laptop from "../assets/laptop.jpeg";
 import cv from "../assets/cv.jpeg";
 import { useApistore } from "../Zustand";
+import { motion } from "framer-motion"
 
 function Hero() {
   const { output, fetchData } = useApistore();
@@ -24,41 +25,68 @@ function Hero() {
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
-      {/* Hero Top Section */}
-      <div className="relative w-full min-h-[60vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 flex flex-col items-center justify-center px-6 text-center">
-        {/* Typewriter Content */}
-        <div className="z-10 animate-fade-in-up mt-14">
-          <h2 className="text-2xl md:text-5xl font-semibold text-gray-800 mb-3">
-            Unlock <span className="text-indigo-600">Your Next Opportunity</span>
-          </h2>
-          <h1 className="text-md md:text-2xl text-gray-700 mb-6">
-            <Typewriter
-              words={['Your journey to', 'finding the perfect job', 'starts right here!']}
-              loop
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </h1>
-        
-        </div>
+<div className="relative w-full min-h-[90vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 animate-gradient-x flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+      
+      {/* Animated Background Effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-200 via-white to-purple-200 opacity-30 animate-pulse-slow"></div>
 
-        {/* Animated Man Image */}
-        <img
-          src={Man}
-          alt="Man at work"
-          className="w-40 md:w-56 animate-bounce-slow z-10 my-6"
-        />
+      {/* Main Content */}
+      <motion.div 
+        className="z-20 mt-10"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <h2 className="text-5xl md:text-8xl font-bold text-gray-800 mb-4 leading-tight">
+          Explore <span className="text-indigo-600">Your Next Opportunity  🚀</span>
+        </h2>
+        <h1 className="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto">
+          <Typewriter
+            words={[
+              "Your journey begins today.",
+              "Find the career you deserve.",
+              "Upgrade your future with us."
+            ]}
+            loop
+            cursor
+            cursorBlinking
+            cursorStyle="|"
+            typeSpeed={60}
+            deleteSpeed={40}
+            delaySpeed={1500}
+          />
+        </h1>
+      </motion.div>
 
-        {/* Wavy Bottom SVG */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 leading-none">
-          <svg viewBox="0 0 500 50" preserveAspectRatio="none" className="w-full h-20">
-            <path d="M0,30 C150,70 350,0 500,30 L500,0 L0,0 Z" fill="#f3f4f6" />
-          </svg>
-        </div>
+      {/* Animated Man Image */}
+      <motion.img
+        src={Man}
+        alt="Man working"
+        className="w-40 md:w-60 z-20 my-8 drop-shadow-xl"
+        initial={{ scale: 0.9 }}
+        animate={{ y: [0, -15, 0], scale: [0.9, 1, 0.9] }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut"
+        }}
+      />
+
+      {/* Call-To-Action Button */}
+  
+
+      {/* Wavy Bottom SVG */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 leading-none">
+        <svg
+          viewBox="0 0 500 50"
+          preserveAspectRatio="none"
+          className="w-full h-24"
+        >
+          <path d="M0,30 C150,70 350,0 500,30 L500,0 L0,0 Z" fill="#f3f4f6" />
+        </svg>
       </div>
+    </div>
 
       {/* Career Advancement Section */}
       <div className="bg-[#0d1624] text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
