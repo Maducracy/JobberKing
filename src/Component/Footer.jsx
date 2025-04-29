@@ -92,12 +92,20 @@ function Footer() {
   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="rounded-full p-2 border border-black hover:text-black-500 transition">
     <FaFacebookF className="text-lg" />
   </a>
-  <img className="w-30 h- " src={getit2} alt="" />
+  <a
+  href="https://play.google.com/store"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img className="w-30 h-auto" src={getit2} alt="Get it on Play Store" />
+</a>
+
+
 </div>
 
 
       <div className="border-gray-300 text-center py-4 text-4x1">
-        &copy; 2025 WorkNaija
+        &copy; 2025 WorkNaija All Right Reserved
       </div>
      
     </footer>

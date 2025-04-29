@@ -8,16 +8,16 @@ import { useApistore } from "../Zustand";
 import { motion } from "framer-motion"
 
 function Hero() {
-  const { output, fetchData } = useApistore();
+  const { fetchData } = useApistore();
   const navigate = useNavigate();
 
   const handleUpgradeCV = () => {
     navigate("/upgradecv");
   };
 
-  const handleFetchJobs = () => {
-    fetchData();
-  };
+  // const handleFetchJobs = () => {
+  //   fetchData();
+  // };
 
   const handleExplorePartnerships = () => {
     navigate("/partnerships");
@@ -25,7 +25,7 @@ function Hero() {
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
-<div className="relative w-full min-h-[90vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 animate-gradient-x flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+<div className="relative w-full min-h-[30vh] bg-gradient-to-r from-indigo-100 via-white to-purple-100 animate-gradient-x flex flex-col items-center justify-center px-6 text-center overflow-hidden">
       
       {/* Animated Background Effect */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-200 via-white to-purple-200 opacity-30 animate-pulse-slow"></div>
@@ -38,6 +38,7 @@ function Hero() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <h2 className="text-5xl md:text-8xl font-bold text-gray-800 mb-4 leading-tight">
+          
           Explore <span className="text-indigo-600">Your Next Opportunity  🚀</span>
         </h2>
         <h1 className="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto">

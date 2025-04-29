@@ -27,7 +27,7 @@ export const useApistore = create((set) => ({
 
       set({ output: data, loading: false });
     } catch (error) {
-      console.error("API Fetch Error:", error);
+      // console.error("API Fetch Error:", error);
       set({ error: error.message || "Something went wrong", loading: false });
     }
   },

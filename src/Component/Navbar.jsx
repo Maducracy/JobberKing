@@ -79,7 +79,7 @@ function Navbar() {
               <button onClick={() => setAuthOpen(!authOpen)} className="flex items-center gap-2 text-gray-700 focus:outline-none">
                 <img src={user} alt="Profile" className="w-6 h-6 rounded-full" />
                 <span>Account ▾</span>
-                <span className="absolute left-0 top-full mt-4 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+                <span className="absolute left-0 top-full mt-4 w-0 h-0.5"></span>
               </button>
               {authOpen && (
                 <div className="absolute mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 z-50">
@@ -89,9 +89,9 @@ function Navbar() {
                   <Link to="/Signup" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleSignup}>
                     Signup
                   </Link>
-                  <Link to="/Profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setAuthOpen(false)}>
+                  {/* <Link to="/Profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setAuthOpen(false)}>
                     Profile
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
