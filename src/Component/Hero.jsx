@@ -6,10 +6,12 @@ import laptop from "../assets/laptop.jpeg";
 import cv from "../assets/cv.jpeg";
 import { useApistore } from "../Zustand";
 import { motion } from "framer-motion"
+import { useState } from "react";
 
 function Hero() {
   const { fetchData } = useApistore();
   const navigate = useNavigate();
+    const [showMore, setShowMore] = useState(false);
 
   const handleUpgradeCV = () => {
     navigate("/upgradecv");
@@ -90,29 +92,61 @@ function Hero() {
     </div>
 
       {/* Career Advancement Section */}
-      <div className="bg-[#0d1624] text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
-        <div className="flex-1">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-4">
-            Advance Your Career
-          </h1>
-          <p className="text-lg mb-6">
-            Create a free account, complete your profile, and get matched with your dream job in no time.
-          </p>
-          <div className="flex gap-6 flex-wrap justify-center md:justify-start">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-all duration-300">
-              Get Started
-            </button>
-            <button className="border border-white hover:bg-white hover:text-[#0d1624] px-6 py-3 rounded-md transition-all duration-300">
-              Learn More
-            </button>
-          </div>
-        </div>
+<div className="bg-[#0d1624] text-white py-16 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="flex-1">
+        <h1 className="text-3xl md:text-4xl font-semibold mb-4">
+          Advance Your Career
+        </h1>
+        <p className="text-lg mb-6">
+          Create a free account, complete your profile, and get matched with your dream job in no time.
+        </p>
 
-        {/* Laptop Image */}
-        <div className="flex-1 flex justify-center">
-          <img src={laptop} alt="Laptop" className="w-72 md:w-80 object-cover rounded-lg" />
+        <ul className="mb-6 space-y-2 text-base">
+          <li className="flex items-center gap-2">✅ AI-powered job matching engine</li>
+          <li className="flex items-center gap-2">✅ Personalized career insights</li>
+          <li className="flex items-center gap-2">✅ Real-time interview alerts</li>
+          <li className="flex items-center gap-2">✅ Certification-based job recommendations</li>
+        </ul>
+
+        {showMore && (
+          <div className="mb-6 space-y-2 text-sm md:text-base text-gray-300 transition-all duration-300">
+            <p>🚀 Access exclusive webinars and live coaching events.</p>
+            <p>🧠 Get resume reviews from hiring experts.</p>
+            <p>📈 Track your career growth with insightful analytics.</p>
+            <p>💬 Join a community of ambitious professionals like you.</p>
+          </div>
+        )}
+
+        <div className="flex gap-6 flex-wrap justify-center md:justify-start">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-all duration-300">
+            Get Started
+          </button>
+
+          {/* Toggle "More" section */}
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="border border-white hover:bg-white hover:text-[#0d1624] px-6 py-3 rounded-md transition-all duration-300 flex items-center gap-2"
+          >
+            <span>{showMore ? "Less" : "More"}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className={`h-5 w-5 transform transition-transform duration-300 ${showMore ? "rotate-180" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Laptop Image */}
+      <div className="flex-1 flex justify-center">
+        <img src={laptop} alt="Laptop" className="w-72 md:w-80 object-cover rounded-lg" />
+      </div>
+    </div>
+
 
       {/* CV Upgrade Section */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 bg-gray-100 py-16 px-6">
@@ -182,6 +216,7 @@ function Hero() {
           animation: bounce-slow 3s infinite;
         }
       `}</style>
+      
     </div>
   );
 }

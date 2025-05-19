@@ -15,6 +15,7 @@ const JobList = () => {
     fetchData();
   }, [fetchData]);
 
+
   const jobs = output?.jobs || [];
 
   const handleSaveJob = (job) => {
