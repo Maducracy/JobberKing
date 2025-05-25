@@ -23,7 +23,7 @@ const JobList = () => {
       const updated = [...savedJobs, job];
       setSavedJobs(updated);
       localStorage.setItem('savedJobs', JSON.stringify(updated));
-      console.log('Job saved for later:', job);
+      alert ('Job saved for later:', job);
     }
   };
 
