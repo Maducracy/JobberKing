@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHandshake, FaBuilding, FaUsers, FaGlobe } from "react-icons/fa";
+import { FaBuilding, FaUsers, FaGlobe } from "react-icons/fa";
 const Partnership = () => {
   return (
     <section className="bg-white py-16 px-6 md:px-20">
