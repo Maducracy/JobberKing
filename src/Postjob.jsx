@@ -9,7 +9,6 @@ export default function RecruitmentPortal() {
   const handlePostJob = () => {
     navigate("/Postenterjob"); // Navigate to the Post a Job page
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const Career = () => {
-  const [show, setShow] = useState("")
+  const [Search, setSearch] = useState( false)
+  
   return (
     <div>
       <div className="p-6">
@@ -9,7 +10,7 @@ const Career = () => {
         <p className="text-gray-600">Join our team and make a difference!</p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-6 mb-6">
-          <input
+          <input onChange={()=> setSearch}
             type="text"
             placeholder="Search job title..."
             className="w-full md:w-1/2 px-4 py-2 border rounded shadow-sm focus:outline-none"

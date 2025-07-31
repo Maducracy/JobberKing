@@ -3,13 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import JOB from "../assets/JOB.mp4";
-
 function Hero() {
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
 
   const handleUpgradeCV = () => navigate("/upgradecv");
-  const handleExplorePartnerships = () => navigate("/partnerships");
+  const handleExplorePartnerships = () => navigate("/Partnership");
 
   return (
     <section className="relative w-full h-[100vh] overflow-hidden">
@@ -72,7 +71,7 @@ function Hero() {
             </button>
             <button
               onClick={() => setShowMore(!showMore)}
-              className="text-sm underline text-gray-300 hover:text-white"
+              className=" text-gray-300 hover:text-white"
             >
               {showMore ? "Show Less" : "Learn More"}
             </button>
@@ -94,9 +93,9 @@ function Hero() {
         </motion.div>
 
         {/* Scroll-down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="absolute bottom-8 left-1/2 transform   -translate-x-1/2 z-30">
           <svg
-            className="w-6 h-6 animate-bounce text-white"
+            className="w-6 h-6 animate-bounce text-white font-extrabold"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"

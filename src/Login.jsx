@@ -10,14 +10,14 @@ function Login() {
     e.preventDefault();
 
     // Dummy login logic (you can connect to backend later)
-    if (email && password) {
-      console.log("Logging in:", { email, password });
-      navigate("/Dashboard"); // redirect after login
-    } else {
-      alert("Please enter email and password");
-    }
-  };
-
+    // if (email && password) {
+    //   console.log("Logging in:", { email, password });
+    //   navigate("/Dashboard"); // redirect after login
+    // } else {
+    //   alert("Please enter email and password");
+    // }
+    email && password ? console.log("Logging"): alert("please enter mail ands password")
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="max-w-md w-full  p-8 rounded-2xl ">

@@ -60,13 +60,12 @@ const JobList = () => {
   return (
     <div className="p-6 flex flex-col lg:flex-row gap-6">
       <div className=" p-4 rounded flex-1 ">
-      <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <div className='  items-center'>
+      <h1 className="text-2xl  font-bold mb-4 flex items-center gap-2">
   <FaBriefcase className="text-blue-600" />
   Jobs for you
 </h1>
-
-        {loading && <p className="text-blue-500">Loading jobs...</p>}
-        {error && <p className="text-red-500">Error: {error}</p>}
+</div>
 
         <ul className="space-y-4">
           {jobs.map((job) => {

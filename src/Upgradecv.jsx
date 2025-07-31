@@ -29,7 +29,7 @@ const UpgradeCvLandingPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex flex-col items-center justify-center p-6">
       {/* Hero Section */}
       <div className="max-w-3xl text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+        <h1 className="text-4xl md:text-5xl font-sans text-gray-800 ">
           Upgrade Your Career with a New CV
         </h1>
         <p className="text-lg md:text-xl text-gray-600">

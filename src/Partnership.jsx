@@ -1,0 +1,53 @@
+import React from "react";
+import { FaHandshake, FaBuilding, FaUsers, FaGlobe } from "react-icons/fa";
+const Partnership = () => {
+  return (
+    <section className="bg-white py-16 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          Partner with <span className="text-blue-600">WorkNaija</span>
+        </h2>
+        <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
+          Whether you're in tech, finance, logistics, FMCG, energy, or public service — we welcome impactful partnerships to build the future of work and opportunity across Nigeria.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12 text-left">
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+            <FaBuilding className="text-4xl text-blue-500 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Corporate Partnerships</h3>
+            <p className="text-gray-600">
+              Work with us to design programs that align with your CSR goals, support employment, and upskill Nigeria’s talent.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+            <FaUsers className="text-4xl text-green-500 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Talent Pipeline</h3>
+            <p className="text-gray-600">
+              Get access to pre-vetted young professionals in tech, finance, customer service, logistics, and more.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+            <FaGlobe className="text-4xl text-yellow-500 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">National & Global Reach</h3>
+            <p className="text-gray-600">
+              Amplify your brand while creating real impact through employment and skills initiatives across Nigeria.
+            </p>
+          </div>
+        </div>
+
+        {/* <a
+          href="mailto:partners@worknaija.com"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-full transition duration-300"
+        >
+          Become a Partner
+        </a> */}
+        <div>
+    
+        </div>
+      </div>
+    
+    </section>
+  );
+};
+
+export default Partnership;

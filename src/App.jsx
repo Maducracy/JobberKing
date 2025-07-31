@@ -10,7 +10,8 @@ import Jobs from "./Component/Jobs.jsx";
 import Postjob from "./Postjob.jsx";
 import Postenterjob from "./Postenterjob.jsx";
 import  Upgradecv from "./Upgradecv.jsx" 
-import Parterships from "./Parterships.jsx";
+import Partnership from "./Partnership.jsx";
+
 
 function App() {
   return (
@@ -28,8 +29,7 @@ function App() {
           <Route path="/Postjob" element={<Postjob />}></Route>
           <Route path="/Postenterjob" element={<Postenterjob />}></Route>
           <Route path="/Upgradecv" element={<Upgradecv />}></Route>
-          <Route path="Parterships" element={<Parterships/>}></Route>
-       
+          <Route path="/Partnership" element={<Partnership/>}></Route>
         </Routes>
       </Router>
     </>

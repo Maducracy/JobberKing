@@ -11,6 +11,7 @@ function Navbar() {
   const [showJobSeekerMobile, setShowJobSeekerMobile] = useState(false); // Mobile dropdown
   const [authOpen, setAuthOpen] = useState(false); // Auth dropdown for Login/Signup/Profile
 
+
   const handleLogin = () => {
     setAuthOpen(false);
     navigate("/Login");
@@ -23,7 +24,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-white p-4 shadow-md sticky top-0 z-40">
+      <nav className="bg-white p-4  sticky top-0 z-40">
         {/* Top Nav */}
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -43,9 +44,9 @@ function Navbar() {
 
             {/* Desktop Dropdown for Job Seeker */}
             <div className="relative group">
-              <button onClick={() => setOpen(!open)} className="relative group text-gray-700 focus:outline-none">
-                Job Seeker ▾
-                <span className="absolute left-0 top-full mt-4 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+              <button onClick={() => setOpen(!open)} className="relative group text-black-700 focus:outline-none">
+                Job Seeker 
+                <span className="absolute left-0 top-full mt-6 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
               </button>
               {open && (
                 <div className="absolute mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 z-50">
@@ -76,13 +77,13 @@ function Navbar() {
 
             {/* Dropdown for Auth (Login, Signup, Profile) */}
             <div className="relative group">
-              <button onClick={() => setAuthOpen(!authOpen)} className="flex items-center gap-2 text-gray-700 focus:outline-none">
+              <button onClick={() => setAuthOpen(!authOpen)} className="flex items-center gap-2 text-black-700 focus:outline-none">
                 <img src={user} alt="Profile" className="w-6 h-6 rounded-full" />
-                <span>Account ▾</span>
+                <span>Account </span>
                 <span className="absolute left-0 top-full mt-4 w-0 h-0.5"></span>
               </button>
               {authOpen && (
-                <div className="absolute mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 z-50">
+                <div className="absolute mt-5 w-48 bg-white shadow-lg rounded-md border border-gray-100 z-50">
                   <Link to="/Login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogin}>
                     Login
                   </Link>
@@ -119,10 +120,10 @@ function Navbar() {
           {/* Mobile Dropdown for Job Seeker */}
           <div className="flex flex-col w-full">
             <button className="text-left w-full text-gray-700 font-medium" onClick={() => setShowJobSeekerMobile(!showJobSeekerMobile)}>
-              Job Seeker {showJobSeekerMobile ? "▲" : "▼"}
+              Job Seeker {showJobSeekerMobile ? "" : ""}
             </button>
             {showJobSeekerMobile && (
-              <div className="ml-4 mt-2 flex flex-col gap-2 text-sm text-gray-600">
+              <div className=" mt-2 flex flex-col gap-2 text-sm text-gray-600">
                 <Link to="/JobSeeker" onClick={() => setShow(false)}>Job Vacancies</Link>
                 <Link to="/JobSeeker/profile" onClick={() => setShow(false)}>CV Reviews</Link>
                 <Link to="/JobSeeker/applications" onClick={() => setShow(false)}>Job Search Advice</Link>
