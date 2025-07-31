@@ -42,22 +42,10 @@ const Partnership = () => {
         </div>
 
         {/* CTA Button */}
-        <a
-          href="mailto:partners@worknaija.com"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-full transition duration-300"
-        >
-          Become a Partner
-        </a>
+     
 
         {/* Partner Logos Slider */}
-        <div className="mt-16">
-          <h3 className="text-xl font-semibold text-gray-700 mb-6">Trusted by Leading Brands</h3>
-          <div className="flex items-center justify-center gap-8 flex-wrap opacity-80">
-            {["/logo1.png", "/logo2.png", "/logo3.png", "/logo4.png"].map((logo, i) => (
-              <img key={i} src={logo} alt={`partner-${i}`} className="h-12 w-auto object-contain" />
-            ))}
-          </div>
-        </div>
+        
 
         {/* Testimonials */}
         <div className="mt-20">
