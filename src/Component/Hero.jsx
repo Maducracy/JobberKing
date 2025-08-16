@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { FaGlobe } from "react-icons/fa"; // world connect symbol
 import JOB from "../assets/JOB.mp4";
+
 function Hero() {
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
@@ -26,7 +28,37 @@ function Hero() {
       </video>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-10"></div>
+
+      {/* World Connect Symbol */}
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: [1, 1.1, 1], opacity: 0.15 }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+        className="absolute inset-0 flex items-center justify-center z-5"
+      >
+        <FaGlobe className="text-blue-400/40 text-[30rem] drop-shadow-2xl" />
+      </motion.div>
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 z-10">
+        {[...Array(20)].map((_, i) => (
+          <motion.span
+            key={i}
+            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
+            initial={{ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight }}
+            animate={{
+              y: [Math.random() * window.innerHeight, -20],
+              opacity: [0.6, 0],
+            }}
+            transition={{
+              duration: Math.random() * 6 + 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
@@ -34,9 +66,9 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 md:p-10 max-w-2xl"
+          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 md:p-10 max-w-2xl shadow-2xl"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
             Discover <span className="text-blue-500">Endless Career Paths</span>
           </h1>
           <h2 className="text-lg md:text-2xl text-gray-200 mb-6">
@@ -59,19 +91,19 @@ function Hero() {
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <button
               onClick={handleUpgradeCV}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 hover:shadow-[0_0_20px_#3b82f6] text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300"
             >
               Upgrade My CV
             </button>
             <button
               onClick={handleExplorePartnerships}
-              className="border border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-md transition-all duration-300"
+              className="border border-white text-white hover:bg-white hover:text-black hover:shadow-[0_0_15px_white] px-6 py-3 rounded-md transition-all duration-300"
             >
               Explore Partnerships
             </button>
             <button
               onClick={() => setShowMore(!showMore)}
-              className=" text-gray-300 hover:text-white"
+              className="text-gray-300 hover:text-white underline underline-offset-4"
             >
               {showMore ? "Show Less" : "Learn More"}
             </button>
@@ -93,7 +125,7 @@ function Hero() {
         </motion.div>
 
         {/* Scroll-down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform   -translate-x-1/2 z-30">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
           <svg
             className="w-6 h-6 animate-bounce text-white font-extrabold"
             fill="none"
@@ -121,6 +153,7 @@ function Hero() {
 }
 
 export default Hero;
+
 
 // import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
