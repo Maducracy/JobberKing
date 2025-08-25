@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import briefcase from "../assets/briefcase.png";
 import menu from "../assets/menu.png";
@@ -51,16 +51,16 @@ function Navbar() {
               {open && (
                 <div className="absolute mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-100 z-50">
                   <Link to="/JobSeeker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setOpen(false)}>
-                    Job Vacancies
+                     <Link to="/Jobvacancies">Job Vacancies</Link> 
                   </Link>
                   <Link to="/JobSeeker/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setOpen(false)}>
-                    CV Reviews
+                     <Link to="CvReview">CV Reviews</Link>
                   </Link>
                   <Link to="/JobSeeker/applications" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setOpen(false)}>
-                    Job Search Advice
+                     <Link to="Jobsearchadvice">Job Search Advice</Link>
                   </Link>
                   <Link to="/ResumeBuilder" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setOpen(false)}>
-                    Resume Builder
+                    <Link to="Resumebuilder">Resume Builder</Link>
                   </Link>
                 </div>
               )}
@@ -119,15 +119,15 @@ function Navbar() {
 
           {/* Mobile Dropdown for Job Seeker */}
           <div className="flex flex-col w-full">
-            <button className="text-left w-full text-gray-700 font-medium" onClick={() => setShowJobSeekerMobile(!showJobSeekerMobile)}>
+            <button className="text-left w-full text-gray-600 font-small" onClick={() => setShowJobSeekerMobile(!showJobSeekerMobile)}>
               Job Seeker {showJobSeekerMobile ? "" : ""}
             </button>
             {showJobSeekerMobile && (
-              <div className=" mt-2 flex flex-col gap-2 text-sm text-gray-600">
-                <Link to="/JobSeeker" onClick={() => setShow(false)}>Job Vacancies</Link>
-                <Link to="/JobSeeker/profile" onClick={() => setShow(false)}>CV Reviews</Link>
-                <Link to="/JobSeeker/applications" onClick={() => setShow(false)}>Job Search Advice</Link>
-                <Link to="/ResumeBuilder" onClick={() => setShow(false)}>Resume Builder</Link>
+              <div className=" mt-2 flex flex-col gap-2 text-sm text-gray-700">
+                <Link to="/Jobvacancies" onClick={() => setShow(false)}>Job Vacancies</Link>
+                <Link to="/CvReview" onClick={() => setShow(false)}>CV Reviews</Link>
+                <Link to="/Jobsearchadvice" onClick={() => setShow(false)}>Job Search Advice</Link>
+                <Link to="/Resumebuilder" onClick={() => setShow(false)}>Resume Builder</Link>
               </div>
             )}
           </div>

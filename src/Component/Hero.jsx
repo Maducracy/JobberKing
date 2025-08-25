@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import { FaGlobe } from "react-icons/fa"; // world connect symbol
+import { FaBriefcase, FaChartLine, FaUsers } from "react-icons/fa";
 import JOB from "../assets/JOB.mp4";
 
 function Hero() {
@@ -11,9 +11,10 @@ function Hero() {
 
   const handleUpgradeCV = () => navigate("/upgradecv");
   const handleExplorePartnerships = () => navigate("/Partnership");
+  
 
   return (
-    <section className="relative w-full h-[100vh] overflow-hidden">
+    <section className="relative w-full h-[110vh] overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -23,22 +24,15 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src={JOB} type="video/mp4" />
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
         Your browser does not support HTML5 video.
       </video>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-10"></div>
-
-      {/* World Connect Symbol */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: [1, 1.1, 1], opacity: 0.15 }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-        className="absolute inset-0 flex items-center justify-center z-5"
-      >
-        <FaGlobe className="text-blue-400/40 text-[30rem] drop-shadow-2xl" />
-      </motion.div>
 
       {/* Floating particles */}
       <div className="absolute inset-0 z-10">
@@ -46,7 +40,10 @@ function Hero() {
           <motion.span
             key={i}
             className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
-            initial={{ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight }}
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+            }}
             animate={{
               y: [Math.random() * window.innerHeight, -20],
               opacity: [0.6, 0],
@@ -61,12 +58,15 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center text-white">
+      <div className="relative z-20 flex flex-col items-center justify-center 
+                min-h-[20vh] sm:min-h-[30vh] md:min-h-screen 
+                px-2 py-1 sm:py-12  
+                text-center text-white">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 md:p-10 max-w-2xl shadow-2xl"
+          className=" bg-white/3 border border-white/20 rounded-2xl p-6 md:p-10 max-w-2xl shadow-2xl"
         >
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
             Discover <span className="text-blue-500">Endless Career Paths</span>
@@ -88,6 +88,7 @@ function Hero() {
             />
           </h2>
 
+          {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <button
               onClick={handleUpgradeCV}
@@ -109,6 +110,7 @@ function Hero() {
             </button>
           </div>
 
+          {/* Learn More Section */}
           {showMore && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -122,37 +124,45 @@ function Hero() {
               <p>🌐 Join a career-driven community</p>
             </motion.div>
           )}
+
+          {/* Analysis Dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-200"
+          >
+            {/* Stat 1 */}
+            <div className="bg-white/10 p-4 rounded-xl border border-white/20 shadow-md hover:scale-105 transition">
+              <FaBriefcase className="text-blue-400 text-3xl " />
+              <h3 className="text-lg font-semibold">4,200+</h3>
+              <p className="text-sm">Active Job Listings</p>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="bg-white/10 p-4 rounded-xl border border-white/20 shadow-md hover:scale-105 transition ">
+              <FaUsers className="text-green-400 text-3xl " />
+              <h3 className="text-lg font-semibold">12k+</h3>
+              <p className="text-sm">Successful Placements</p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="bg-white/10 p-4 rounded-xl border border-white/20 shadow-md hover:scale-105 transition">
+              <FaChartLine className="text-yellow-400 text-3xl " />
+              <h3 className="text-lg font-semibold">89%</h3>
+              <p className="text-sm">CV Upgrade Success Rate</p>
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Scroll-down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-          <svg
-            className="w-6 h-6 animate-bounce text-white font-extrabold"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
+       
       </div>
-
-      {/* Animation styles */}
-      <style>{`
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        .animate-bounce {
-          animation: bounce 2s infinite;
-        }
-      `}</style>
     </section>
   );
 }
 
 export default Hero;
+
 
 
 // import React, { useState, useEffect } from "react";

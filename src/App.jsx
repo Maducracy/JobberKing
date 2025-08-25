@@ -9,9 +9,12 @@ import HelpCentre from "../src/HelpCentre.jsx";
 import Jobs from "./Component/Jobs.jsx";
 import Postjob from "./Postjob.jsx";
 import Postenterjob from "./Postenterjob.jsx";
-import  Upgradecv from "./Upgradecv.jsx" 
+import Upgradecv from "./Upgradecv.jsx";
 import Partnership from "./Partnership.jsx";
-
+import CvReview from "./CvReview.jsx";
+import Resumebuilder from "./Resumebuilder.jsx";
+import Jobvacancies from "./Jobvacancies.jsx";
+import Jobsearchadvice from "./Jobsearchadvice.jsx";
 
 function App() {
   return (
@@ -29,7 +32,11 @@ function App() {
           <Route path="/Postjob" element={<Postjob />}></Route>
           <Route path="/Postenterjob" element={<Postenterjob />}></Route>
           <Route path="/Upgradecv" element={<Upgradecv />}></Route>
-          <Route path="/Partnership" element={<Partnership/>}></Route>
+          <Route path="/Partnership" element={<Partnership />}></Route>
+          <Route path="/Resumebuilder" element={<Resumebuilder />}></Route>
+          <Route path="/Jobsearchadvice" element={<Jobsearchadvice />}></Route>
+          <Route path="/Jobvacancies" element={<Jobvacancies />}></Route>
+          <Route path="/CvReview" element={<CvReview />}></Route>
         </Routes>
       </Router>
     </>

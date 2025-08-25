@@ -23,6 +23,7 @@ export const useApistore = create((set) => ({
       });
 
       const data = await response.json();
+    
   
 
       set({ output: data, loading: false });
