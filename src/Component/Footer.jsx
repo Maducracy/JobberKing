@@ -226,7 +226,7 @@ const WorkNaijaPage = () => {
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center gap-2 bg-gray-800 px-3 py-2 rounded-md hover:bg-gray-700"
+                className=" items-center gap-2 bg-gray-800 px-3 py-2 rounded-md hover:bg-gray-700"
               >
                 <SiGoogleplay className="text-xl" />
                 <span>Google Play</span>
@@ -234,7 +234,7 @@ const WorkNaijaPage = () => {
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center gap-2 bg-gray-800 px-3 py-2 rounded-md hover:bg-gray-700"
+                className="items-center gap-2 bg-gray-800 px-3 py-2 rounded-md hover:bg-gray-700"
               >
                 <SiAppstore className="text-xl" />
                 <span>App Store</span>
